@@ -1,0 +1,19 @@
+{
+  "name": "st3phhays-assets",
+  "description": "This repository houses shared assets that are used on various projects by Steph Hays (@st3phhays).",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Steph Hays",
+    "email": "steph@stephhays.dev",
+    "url": "https://stephhays.dev/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/st3phhays/st3phhays-assets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/st3phhays/st3phhays-assets/issues"
+  },
+  "homepage": "https://github.com/st3phhays/st3phhays-assets#readme"
+}
