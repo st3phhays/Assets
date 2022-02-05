@@ -1,0 +1,20 @@
+// General
+$enable-responsive-font-sizes:  true;
+$enable-shadows:                true;
+$variable-prefix:               sh-;
+
+// Dropdowns
+$dropdown-bg:                   var(--sh-main);
+$dropdown-link-hover-bg:        var(--#{$variable-prefix}alpha);
+$dropdown-link-hover-color:     var(--#{$variable-prefix}alpha-accessible);
+$dropdown-link-active-bg:       var(--#{$variable-prefix}alpha);
+$dropdown-link-active-color:    var(--#{$variable-prefix}alpha-accessible);
+
+// Margin
+$enable-negative-margins:       true;
+
+// Cards
+$card-bg:               var(--sh-main);
+
+// Links
+$link-decoration:       none;

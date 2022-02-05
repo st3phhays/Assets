@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+main {
+    margin-bottom: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// Show dark/light assets
+[data-sh-theme-mode="dark"] .light-theme,
+[data-sh-theme-mode="light"] .dark-theme {
+    display: none;
+}
+
+[data-sh-theme-mode="dark"] .dark-theme,
+[data-sh-theme-mode="light"] .light-theme {
+    display: block;
+}
