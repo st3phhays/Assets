@@ -23,3 +23,12 @@ img {
 [data-sh-theme-mode="light"] .light-theme {
     display: block;
 }
+
+// Borders vs. shadows for dark/light modes
+[data-sh-theme-mode="dark"] .border-shadow {
+    border: 1px solid $border-color;
+}
+
+[data-sh-theme-mode="light"] .border-shadow {
+    box-shadow: $box-shadow;
+}

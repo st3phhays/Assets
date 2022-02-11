@@ -4,6 +4,12 @@
     }
 }
 
+@each $font-weight in $font-weights {
+    .fw-#{$font-weight} {
+        font-weight: $font-weight;
+    }
+}
+
 @each $theme, $theme-names in $themes {
     @each $color, $value in $theme-names {
         .text-#{$color} {

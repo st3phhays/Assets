@@ -22,3 +22,14 @@
     height: 1.5rem;
     width: 1.5rem;
 }
+
+// Background image utilities
+.bg-img-cover {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-img-parallax {
+    background-attachment: fixed;
+}
