@@ -17,9 +17,9 @@
 
 @function customAccessibleColor($color, $value) {
     @if (lightness($value) >= 35) {
-        @return var(--sh-black);
+        @return var(--#{$variable-prefix}black);
     } @else {
-        @return var(--sh-white);
+        @return var(--#{$variable-prefix}white);
     }
 }
 

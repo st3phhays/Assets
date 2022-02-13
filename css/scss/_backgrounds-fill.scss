@@ -12,13 +12,13 @@
 }
 
 .diagnol-bottom-top div {
-    background: linear-gradient(to top left, transparent calc(50% - 1px), var(--sh-opposite), transparent calc(50% + 1px));
+    background: linear-gradient(to top left, transparent calc(50% - 1px), var(--#{$variable-prefix}opposite), transparent calc(50% + 1px));
     height: 1.5rem;
     width: 1.5rem;
 }
 
 .diagnol-top-bottom div {
-    background: linear-gradient(to top right, transparent calc(50% - 1px), var(--sh-opposite), transparent calc(50% + 1px));
+    background: linear-gradient(to top right, transparent calc(50% - 1px), var(--#{$variable-prefix}opposite), transparent calc(50% + 1px));
     height: 1.5rem;
     width: 1.5rem;
 }

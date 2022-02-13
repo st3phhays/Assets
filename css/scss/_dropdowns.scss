@@ -3,5 +3,5 @@
         background-color: customLighten(--#{$variable-prefix}alpha, 10%);
     }
 
-    color: var(--sh-opposite);
+    color: var(--#{$variable-prefix}opposite);
 }
