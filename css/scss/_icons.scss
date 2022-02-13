@@ -31,8 +31,8 @@
 
 // Blip
 .icon-blip {
-    background: var(--sh-white);
-    border: 1px dotted var(--sh-opposite);
+    background: var(--#{$variable-prefix}white);
+    border: 1px dotted var(--#{$variable-prefix}opposite);
 
     &::after {
         content: '';
@@ -48,13 +48,13 @@
     
       &:focus,
       &:hover {
-        color: var(--sh-white);
+        color: var(--#{$variable-prefix}white);
     
         &::after {
           width: calc(100% + 2px);
           height: calc(100% + 2px);
           margin-left: calc(-50% - 1px);
-          border: 1px solid var(--sh-opposite);
+          border: 1px solid var(--#{$variable-prefix}opposite);
         }
       }
     
