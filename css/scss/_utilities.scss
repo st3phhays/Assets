@@ -73,3 +73,10 @@
         top: 90px !important;
     }
 }
+
+// Width based on media queries
+@include media-breakpoint-up(sm) {
+    .w-sm-auto {
+        width: auto !important;
+    }
+}
