@@ -19,14 +19,25 @@
             color: var(--#{$variable-prefix}#{$color});
             border-color: var(--#{$variable-prefix}#{$color});
 
-            &:focus, &:active, &.active, &:active:focus, &.active:focus {
+            &:focus, &:active, &.active, &:active:focus, &.active:focus, &.dropdown-toggle.show {
                 outline: 0;
                 box-shadow: 0 0 0 $btn-focus-width customAlpha(--#{$variable-prefix}#{$color}, .25);
             }
 
-            &:focus, &:active, &.active, &:active:focus, &.active:focus, &:hover {
+            &:focus, &:active, &.active, &:active:focus, &.active:focus, .dropdown-toggle.show, &:hover {
                 background-color: var(--#{$variable-prefix}#{$color});
                 color: var(--#{$variable-prefix}#{$color}-accessible);
+            }
+        }
+
+        .btn-check:active+.btn-outline-#{$color}, .btn-check:checked+.btn-outline-#{$color} {
+            background-color: var(--#{$variable-prefix}#{$color});
+            color: var(--#{$variable-prefix}#{$color}-accessible);
+            border-color: var(--#{$variable-prefix}#{$color});
+
+            &:focus, &:active, &.active, &:active:focus, &.active:focus {
+                outline: 0;
+                box-shadow: 0 0 0 $btn-focus-width customAlpha(--#{$variable-prefix}#{$color}, .25);
             }
         }
     }

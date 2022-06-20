@@ -8,6 +8,22 @@
     .w-#{$pixel} {
         width: $value !important;
     }
+
+    .min-h-#{$pixel} {
+        min-height: $value !important;
+    }
+
+    .min-w-#{$pixel} {
+        min-width: $value !important;
+    }
+
+    .max-h-#{$pixel} {
+        max-height: $value !important;
+    }
+
+    .max-w-#{$pixel} {
+        max-width: $value !important;
+    }
 }
 
 // In percentages
