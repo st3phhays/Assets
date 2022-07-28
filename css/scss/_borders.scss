@@ -2,32 +2,32 @@
     @each $color, $value in $theme-names {
         .border-top-#{$color} {
             border-top: 1px solid;
-            border-color: var(--#{$variable-prefix}#{$color}) !important;
+            border-color: var(--#{$prefix}#{$color}) !important;
         }
 
         .border-bottom-#{$color} {
             border-bottom: 1px solid;
-            border-color: var(--#{$variable-prefix}#{$color}) !important;
+            border-color: var(--#{$prefix}#{$color}) !important;
         }
 
         .border-start-#{$color} {
             border-left: 1px solid;
-            border-color: var(--#{$variable-prefix}#{$color}) !important;
+            border-color: var(--#{$prefix}#{$color}) !important;
         }
 
         .border-end-#{$color} {
             border-right: 1px solid;
-            border-color: var(--#{$variable-prefix}#{$color}) !important;
+            border-color: var(--#{$prefix}#{$color}) !important;
         }
 
         .border-#{$color} {
             border: 1px solid;
-            border-color: var(--#{$variable-prefix}#{$color}) !important;
+            border-color: var(--#{$prefix}#{$color}) !important;
         }
 
         .border-#{$color}-accessible {
             border: 1px solid;
-            border-color: var(--#{$variable-prefix}#{$color}-accessible) !important;
+            border-color: var(--#{$prefix}#{$color}-accessible) !important;
         }
     }
 }

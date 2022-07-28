@@ -16,19 +16,19 @@ $animation-ease-bounce: cubic-bezier(0.175,  0.885, 0.320, 1.275);
         right: 0;
         bottom: 0;
         left: 0;
-        border: 1px solid var(--#{$variable-prefix}opposite);
+        border: 1px solid var(--#{$prefix}opposite);
         transition: transform $animation-timing $animation-ease;
         will-change: transform;
     }
 
     &:before {
         z-index: -1;
-        background-color: var(--#{$variable-prefix}beta);
+        background-color: var(--#{$prefix}beta);
     }
 
     &:after {
         z-index: -2;
-        background-color: var(--#{$variable-prefix}zeta);
+        background-color: var(--#{$prefix}zeta);
     }
 
     &.stacked-up-right {
@@ -46,7 +46,7 @@ $animation-ease-bounce: cubic-bezier(0.175,  0.885, 0.320, 1.275);
     }
 
     .card-body {
-        background-color: var(--#{$variable-prefix}main);
-        border: $card-border-width solid var(--#{$variable-prefix}opposite);
+        background-color: var(--#{$prefix}main);
+        border: $card-border-width solid var(--#{$prefix}opposite);
     }
 }

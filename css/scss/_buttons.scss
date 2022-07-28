@@ -1,43 +1,43 @@
 @each $theme, $theme-names in $themes {
     @each $color, $value in $theme-names {
         .btn-#{$color} {
-            background-color: var(--#{$variable-prefix}#{$color});
-            color: var(--#{$variable-prefix}#{$color}-accessible);
+            background-color: var(--#{$prefix}#{$color});
+            color: var(--#{$prefix}#{$color}-accessible);
 
             &:focus, &:active, &.active, &:active:focus, &.active:focus {
                 outline: 0;
-                box-shadow: 0 0 0 $btn-focus-width customAlpha(--#{$variable-prefix}#{$color}, .25);
+                box-shadow: 0 0 0 $btn-focus-width customAlpha(--#{$prefix}#{$color}, .25);
             }
 
             &:hover {
-                background-color: customShift(--#{$variable-prefix}#{$color}, $value, 5%);
-                color: var(--#{$variable-prefix}#{$color}-accessible);
+                background-color: customShift(--#{$prefix}#{$color}, $value, 5%);
+                color: var(--#{$prefix}#{$color}-accessible);
             }
         }
 
         .btn-outline-#{$color} {
-            color: var(--#{$variable-prefix}#{$color});
-            border-color: var(--#{$variable-prefix}#{$color});
+            color: var(--#{$prefix}#{$color});
+            border-color: var(--#{$prefix}#{$color});
 
             &:focus, &:active, &.active, &:active:focus, &.active:focus, &.dropdown-toggle.show {
                 outline: 0;
-                box-shadow: 0 0 0 $btn-focus-width customAlpha(--#{$variable-prefix}#{$color}, .25);
+                box-shadow: 0 0 0 $btn-focus-width customAlpha(--#{$prefix}#{$color}, .25);
             }
 
             &:focus, &:active, &.active, &:active:focus, &.active:focus, .dropdown-toggle.show, &:hover {
-                background-color: var(--#{$variable-prefix}#{$color});
-                color: var(--#{$variable-prefix}#{$color}-accessible);
+                background-color: var(--#{$prefix}#{$color});
+                color: var(--#{$prefix}#{$color}-accessible);
             }
         }
 
         .btn-check:active+.btn-outline-#{$color}, .btn-check:checked+.btn-outline-#{$color} {
-            background-color: var(--#{$variable-prefix}#{$color});
-            color: var(--#{$variable-prefix}#{$color}-accessible);
-            border-color: var(--#{$variable-prefix}#{$color});
+            background-color: var(--#{$prefix}#{$color});
+            color: var(--#{$prefix}#{$color}-accessible);
+            border-color: var(--#{$prefix}#{$color});
 
             &:focus, &:active, &.active, &:active:focus, &.active:focus {
                 outline: 0;
-                box-shadow: 0 0 0 $btn-focus-width customAlpha(--#{$variable-prefix}#{$color}, .25);
+                box-shadow: 0 0 0 $btn-focus-width customAlpha(--#{$prefix}#{$color}, .25);
             }
         }
     }
