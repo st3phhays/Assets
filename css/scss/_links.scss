@@ -1,8 +1,8 @@
 a {
-    color: var(--#{$variable-prefix}alpha);
+    color: var(--#{$prefix}alpha);
 
     &:focus, &:hover {
-        color: customDarken(--#{$variable-prefix}alpha, 10%);
+        color: customDarken(--#{$prefix}alpha, 10%);
     }
 }
 
@@ -35,24 +35,24 @@ a {
         .link-#{$color},
         .link-underline-#{$color}, .link-underline-#{$color}-container a,
         .link-underline-hover-#{$color}, .link-underline-hover-#{$color}-container a {
-            color: var(--#{$variable-prefix}#{$color});
+            color: var(--#{$prefix}#{$color});
 
             &:focus, &:hover {
-                color: customShift(--#{$variable-prefix}#{$color}, $value, 10%);
+                color: customShift(--#{$prefix}#{$color}, $value, 10%);
             }
         }
 
         .link-underline-#{$color}, .link-underline-#{$color}-container a {
-            border-bottom: 2px dotted var(--#{$variable-prefix}#{$color});
+            border-bottom: 2px dotted var(--#{$prefix}#{$color});
         
             &:after {
-                background-color: customShift(--#{$variable-prefix}#{$color}, $value, 10%);
+                background-color: customShift(--#{$prefix}#{$color}, $value, 10%);
             }
         }
 
         .link-underline-hover-#{$color}, .link-underline-hover-#{$color}-container a {
             &:after {
-                border-bottom: 2px dotted customShift(--#{$variable-prefix}#{$color}, $value, 10%);
+                border-bottom: 2px dotted customShift(--#{$prefix}#{$color}, $value, 10%);
             }
         }
     }

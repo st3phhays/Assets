@@ -13,7 +13,7 @@
 @each $theme, $theme-names in $themes {
     @each $color, $value in $theme-names {
         .text-#{$color} {
-            color: var(--#{$variable-prefix}#{$color}) !important;
+            color: var(--#{$prefix}#{$color}) !important;
         }
     }
 }
@@ -21,7 +21,7 @@
 @each $text-shadow, $value in $text-shadows {
     @each $text-shadow-weight in $value {
         .text-shadow-#{$text-shadow}-#{$text-shadow-weight} {
-            text-shadow: customTextShadow(var(--#{$variable-prefix}#{$text-shadow}), $text-shadow-weight)
+            text-shadow: customTextShadow(var(--#{$prefix}#{$text-shadow}), $text-shadow-weight)
         }
     }
 }

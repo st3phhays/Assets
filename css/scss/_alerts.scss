@@ -1,14 +1,14 @@
 @each $theme, $theme-names in $themes {
     @each $color, $value in $theme-names {
         .callout-#{$color} {
-            background: var(--#{$variable-prefix}main-secondary);
-            border-left: 5px solid var(--#{$variable-prefix}#{$color});
-            color: var(--#{$variable-prefix}main-secondary-accessible);
+            background: var(--#{$prefix}main-secondary);
+            border-left: 5px solid var(--#{$prefix}#{$color});
+            color: var(--#{$prefix}main-secondary-accessible);
         }
 
         .alert-#{$color} {
-            background: var(--#{$variable-prefix}#{$color});
-            color: var(--#{$variable-prefix}#{$color}-accessible);
+            background: var(--#{$prefix}#{$color});
+            color: var(--#{$prefix}#{$color}-accessible);
         }
     }
 }

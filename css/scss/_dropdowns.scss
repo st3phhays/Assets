@@ -1,7 +1,7 @@
 .dropdown-item {
     &:hover {
-        background-color: customLighten(--#{$variable-prefix}alpha, 10%);
+        background-color: customLighten(--#{$prefix}alpha, 10%);
     }
 
-    color: var(--#{$variable-prefix}opposite);
+    color: var(--#{$prefix}opposite);
 }

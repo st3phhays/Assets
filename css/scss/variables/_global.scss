@@ -1,20 +1,20 @@
 // General
 $enable-responsive-font-sizes:  true;
 $enable-shadows:                true;
-$variable-prefix:               sh-;
+$prefix:                        sh-;
 
 // Dropdowns
-$dropdown-bg:                   var(--#{$variable-prefix}main);
-$dropdown-link-hover-bg:        var(--#{$variable-prefix}alpha);
-$dropdown-link-hover-color:     var(--#{$variable-prefix}alpha-accessible);
-$dropdown-link-active-bg:       var(--#{$variable-prefix}alpha);
-$dropdown-link-active-color:    var(--#{$variable-prefix}alpha-accessible);
+$dropdown-bg:                   var(--#{$prefix}main);
+$dropdown-link-hover-bg:        var(--#{$prefix}alpha);
+$dropdown-link-hover-color:     var(--#{$prefix}alpha-accessible);
+$dropdown-link-active-bg:       var(--#{$prefix}alpha);
+$dropdown-link-active-color:    var(--#{$prefix}alpha-accessible);
 
 // Margin
 $enable-negative-margins:       true;
 
 // Cards
-$card-bg:               var(--#{$variable-prefix}main);
+$card-bg:               var(--#{$prefix}main);
 
 // Links
 $link-decoration:       none;

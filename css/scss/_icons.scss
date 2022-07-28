@@ -25,14 +25,14 @@
 @each $color, $value in $socialmedia-colors {
     .icon-#{$color} {
         background-color: $value;
-        color: var(--#{$variable-prefix}#{$color}-accessible);
+        color: var(--#{$prefix}#{$color}-accessible);
     }
 }
 
 // Blip
 .icon-blip {
-    background: var(--#{$variable-prefix}white);
-    border: 1px dotted var(--#{$variable-prefix}opposite);
+    background: var(--#{$prefix}white);
+    border: 1px dotted var(--#{$prefix}opposite);
 
     &::after {
         content: '';
@@ -48,13 +48,13 @@
     
       &:focus,
       &:hover {
-        color: var(--#{$variable-prefix}white);
+        color: var(--#{$prefix}white);
     
         &::after {
           width: calc(100% + 2px);
           height: calc(100% + 2px);
           margin-left: calc(-50% - 1px);
-          border: 1px solid var(--#{$variable-prefix}opposite);
+          border: 1px solid var(--#{$prefix}opposite);
         }
       }
     
