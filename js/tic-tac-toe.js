@@ -21,7 +21,7 @@
             comp = 0,
             t = 0,
             cells = ticTacToe.querySelectorAll('.cell'),
-            btnReplay = ticTacToe.querySelector('button');
+            btnReplay = ticTacToe.querySelector('button'),
             score = ticTacToe.querySelector('.score');
 
         myChoice();
