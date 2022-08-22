@@ -9,7 +9,7 @@
                 if (!collapseTarget.classList.contains('show')) {
                     e.preventDefault();
 
-                    var collapseTargetContainer = Collapse.getInstance(collapseTarget) ? Collapse.getInstance(collapseTarget) : new Collapse(collapseTarget, { toggle: false });
+                    var collapseTargetContainer = bootstrap.Collapse.getInstance(collapseTarget) ? bootstrap.Collapse.getInstance(collapseTarget) : new bootstrap.Collapse(collapseTarget, { toggle: false });
 
                     collapseTargetContainer.show();
 

@@ -1,6 +1,6 @@
 (function() {
     if (location.hash) {
-        var el = document.querySelector(escapeId(location.hash));
+        var el = document.querySelector(escapeSpecialChars(location.hash));
         
         if (el) {
             var elScroll = el,
@@ -11,9 +11,9 @@
             }
 
             collapseParents.reverse().forEach(function (el, idx, array) {
-                el = document.getElementById(escapeId(el.id));
+                el = document.getElementById(escapeSpecialChars(el.id));
 
-                var collapseParentContainer = Collapse.getInstance(el) ? Collapse.getInstance(el) : new Collapse(el, { toggle: false });
+                var collapseParentContainer = bootstrap.Collapse.getInstance(el) ? bootstrap.Collapse.getInstance(el) : new bootstrap.Collapse(el, { toggle: false });
                 
                 collapseParentContainer.show();
 
