@@ -1,0 +1,120 @@
+/* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+aspnet+bash+csharp+json+powershell+scss&plugins=line-numbers+toolbar+copy-to-clipboard */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+ 
+code:not([class*="language-"]) {
+	padding: .25rem;
+	background: customAlpha(--#{$prefix}alpha, 30%);
+	color: var(--#{$prefix}opposite);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: var(--#{$prefix}opposite);
+	text-shadow: none;
+	font-family: $font-family-code;
+	font-size: .85rem;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	background: customAlpha(--#{$prefix}alpha, 20%);
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	background: customAlpha(--#{$prefix}alpha, 20%);
+}
+
+/* Code blocks */
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: var(--#{$prefix}main-secondary);
+	border: 1px solid var(--#{$prefix}opposite);
+	max-height: 500px;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--#{$prefix}gray-code, var(--#{$prefix}gray));
+}
+
+.token.punctuation {
+	color: var(--#{$prefix}gray-code, var(--#{$prefix}gray));
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: var(--#{$prefix}pink-code, var(--#{$prefix}pink));
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: var(--#{$prefix}green-code, var(--#{$prefix}green));
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: var(--#{$prefix}yellow-code, var(--#{$prefix}yellow));
+	/* This background color was intended by the author of this theme. */
+	background: transparent;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: var(--#{$prefix}blue-code, var(--#{$prefix}blue));
+}
+
+.token.function,
+.token.class-name {
+	color: var(--#{$prefix}red-code, var(--#{$prefix}red));
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: var(--#{$prefix}orange-code, var(--#{$prefix}orange));
+}
+
+.line-numbers .line-numbers-rows {
+	border-right: 1px solid var(--#{$prefix}alpha);
+}
+
+.line-numbers-rows > span {
+	display: block;
+	counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+	color: var(--#{$prefix}alpha);
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar > .toolbar-item > span {
+	color: var(--#{$prefix}alpha-accessible);
+	font-size: .75em;
+	padding: .35rem .65em;
+	background: var(--#{$prefix}alpha);
+	border-radius: 0;
+	box-shadow: none;
+}
