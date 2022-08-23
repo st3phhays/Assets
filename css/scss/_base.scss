@@ -13,6 +13,10 @@ img {
     height: auto;
 }
 
+::selection {
+	background: customAlpha(--#{$prefix}alpha, 20%);
+}
+
 // Show dark/light assets
 [data-sh-theme-mode="dark"] .light-theme,
 [data-sh-theme-mode="light"] .dark-theme {
