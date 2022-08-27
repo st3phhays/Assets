@@ -1,23 +1,27 @@
-(function() {
+import Collapse from './bootstrap/collapse';
+import { getParents } from './functions.js';
+import { escapeSpecialChars } from './functions.js';
+
+(() => {
     if (location.hash) {
-        var el = document.querySelector(escapeSpecialChars(location.hash));
-        
+        let el = document.querySelector(escapeSpecialChars(location.hash));
+
         if (el) {
-            var elScroll = el,
+            const elScroll = el,
                 collapseParents = getParents(el).filter(el => el != document && el.classList.contains('collapse'));
 
             if (collapseParents.length == 0 && el.classList.contains('collapse')) {
                 collapseParents.push(el);
             }
 
-            collapseParents.reverse().forEach(function (el, idx, array) {
+            collapseParents.reverse().forEach((el, idx, array) => {
                 el = document.getElementById(escapeSpecialChars(el.id));
-
-                var collapseParentContainer = bootstrap.Collapse.getInstance(el) ? bootstrap.Collapse.getInstance(el) : new bootstrap.Collapse(el, { toggle: false });
+                
+                const collapseParentContainer = Collapse.getOrCreateInstance(el, { toggle: false });
                 
                 collapseParentContainer.show();
 
-                el.addEventListener('shown.bs.collapse', function (e) {
+                el.addEventListener('shown.bs.collapse', e => {
                     e.stopImmediatePropagation();
 
                     if (idx === array.length - 1) {

@@ -1,8 +1,11 @@
-(function() {
-    var ticTacToe = document.getElementById('ticTacToe');
+import { confettiBurst} from './functions.js';
+import { consoleMeme } from './console-image.js';
+
+(() => {
+    const ticTacToe = document.getElementById('ticTacToe');
     
     if (ticTacToe) {
-        var pause = 0,
+        let pause = 0,
             all = 0,
             a = 0,
             b = 0,
@@ -19,20 +22,13 @@
             choice = 9,
             aRandomNumber = 0,
             comp = 0,
-            t = 0,
-            cells = ticTacToe.querySelectorAll('.cell'),
+            t = 0;
+
+        const cells = ticTacToe.querySelectorAll('.cell'),
             btnReplay = ticTacToe.querySelector('button'),
             score = ticTacToe.querySelector('.score');
 
-        myChoice();
-
-        cells.forEach(function(el) {
-            el.addEventListener('click', function() {
-                yourChoice(el.getAttribute('data-sh-cell'))
-            }, false);
-        });
-
-        function logicOne() {
+        const logicOne = () => {
             if (a == 1 && b == 1 && c == 1) all = 1;
             if (a == 1 && d == 1 && g == 1) all = 1;
             if (a == 1 && e == 1 && i == 1) all = 1;
@@ -52,7 +48,7 @@
             if (a != 0 && b != 0 && c != 0 && d != 0 && e != 0 && f != 0 && g != 0 && h != 0 && i != 0 && all == 0) all = 3;
         }
 
-        function logicTwo() {
+        const logicTwo = () => {
             if (a == 2 && b == 2 && c == 0 && temp == "") temp = "C";
             if (a == 2 && b == 0 && c == 2 && temp == "") temp = "B";
             if (a == 0 && b == 2 && c == 2 && temp == "") temp = "A";
@@ -79,7 +75,7 @@
             if (g == 0 && e == 2 && c == 2 && temp == "") temp = "G";
         }
 
-        function logicThree() {
+        const logicThree = () => {
             if (a == 1 && b == 1 && c == 0 && temp == "") temp = "C";
             if (a == 1 && b == 0 && c == 1 && temp == "") temp = "B";
             if (a == 0 && b == 1 && c == 1 && temp == "") temp = "A";
@@ -106,7 +102,7 @@
             if (g == 0 && e == 1 && c == 1 && temp == "") temp = "G";
         }
 
-        function checkSpace() {
+        const checkSpace = () => {
             if (temp == "A" && a == 0) {
                 ok = 1;
                 if (cf == 0) a = 1;
@@ -154,7 +150,7 @@
             }
         }
 
-        function yourChoice(chName) {
+        const yourChoice = chName => {
             pause = 0;
             if (all != 0) ended();
             if (all == 0) {
@@ -177,12 +173,12 @@
             }
         }
 
-        function taken() {
+        const taken = () => {
             console.log("🤦‍♀️ That square is already occupied silly.");
             pause = 1;
         }
 
-        function myChoice() {
+        const myChoice = () => {
             temp = "";
             ok = 0;
             cf = 1;
@@ -204,18 +200,18 @@
                 checkSpace();
             }
 
-            setTimeout(function() {
+            setTimeout(() => {
                 document.querySelector('[data-sh-cell="' + temp + '"]').innerHTML = '<i class="fa-solid fa-x text-opposite"></i>';
             }, 500);
 
             process();
         }
 
-        function ended() {
+        const ended = () => {
             console.log("The game has already ended. To play a new game click the Play Again button.");
         }
 
-        function process() {
+        const process = () => {
             logicOne();
 
             if (all == 1) {
@@ -228,7 +224,7 @@
             if (all == 2) {
                 ticTacToe.classList.add('loser');
                 score.innerHTML = 'Loser';
-                console.meme("You lost", "N00b", "https://cataas.com/cat/cute?width=200?height=200?" + new Date().getTime(), 200, 200);
+                consoleMeme("You lost", "N00b", "https://cataas.com/cat/cute?width=200?height=200?" + new Date().getTime(), 200, 200);
             }
 
             if (all == 3) {
@@ -242,7 +238,7 @@
             }
         }
 
-        btnReplay.addEventListener('click', function() {
+        btnReplay.addEventListener('click', () => {
             all = 0;
             a = 0;
             b = 0;
@@ -260,7 +256,7 @@
             aRandomNumber = 0;
             comp = 0;
 
-            cells.forEach(function(el) {
+            cells.forEach(el => {
                 el.innerHTML = '';
             });
 
@@ -274,5 +270,13 @@
             ticTacToe.classList.remove('replay', 'winner', 'loser', 'tie');
             score.innerHTML = '';
         }, false);
+
+        cells.forEach(el => {
+            el.addEventListener('click', () => {
+                yourChoice(el.getAttribute('data-sh-cell'))
+            }, false);
+        });
+
+        myChoice();
     }
 })();

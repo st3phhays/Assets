@@ -1,28 +1,32 @@
-(function() {
-    var matchUp = document.getElementById('matchUp');
+import { confettiBurst } from './functions.js';
+import { randomNoRepeats} from './functions.js';
+import { consoleMeme } from './console-image.js';
+
+(() => {
+    const matchUp = document.getElementById('matchUp');
     
     if (matchUp) {
-        var cards = matchUp.querySelectorAll('.flip-card'),
+        const cards = matchUp.querySelectorAll('.flip-card'),
             flipper = randomNoRepeats([...cards]);
 
-        const flipperInterval = setInterval(function() {
+        const flipperInterval = setInterval(() => {
             flipper();
         }, 5000);
 
-        cards.forEach(function(el) {
-            el.addEventListener('click', function() {
+        cards.forEach(el => {
+            el.addEventListener('click', () => {
                 flipCard(el);
             }, false);
 
-            document.addEventListener('keydown', function(e) {
-                var code = (e.keyCode ? e.keyCode : e.which);
+            document.addEventListener('keydown', e => {
+                const code = (e.keyCode ? e.keyCode : e.which);
 
                 if (code == 13 && document.activeElement == el) {
                     flipCard(el);
                 }
             });
 
-            function flipCard() {
+            const flipCard = () => {
                 el.classList.add('active');
 
                 if (!matchUp.classList.contains('active')) {
@@ -44,7 +48,7 @@
                     } else {
                         el.classList.add('flip-card-two');
                     
-                        var cardOne = document.querySelector('.flip-card-one'),
+                        const cardOne = document.querySelector('.flip-card-one'),
                             cardTwo = document.querySelector('.flip-card-two');
 
                         if (cardOne.getAttribute('sh-data-match') == cardTwo.getAttribute('sh-data-match')) {
@@ -53,8 +57,8 @@
                             console.log("You found a match! 🏆");
                             confettiBurst();
                         } else {
-                            console.meme("Not a match", "Try again", "https://cataas.com/cat/cute?width=200?height=200?" + new Date().getTime(), 200, 200);
-                            setTimeout(function() {
+                            consoleMeme("Not a match", "Try again", "https://cataas.com/cat/cute?width=200?height=200?" + new Date().getTime(), 200, 200);
+                            setTimeout(() => {
                                 cardOne.classList.remove('active');
                                 cardTwo.classList.remove('active');
                             }, 1000);

@@ -1,4 +1,4 @@
-(function() {
+(() => {
     const cookieNoticeAlert = document.getElementById('cookieNotice'),
         cookieNoticeName = 'accepted_cookie_notice';
 
@@ -7,8 +7,8 @@
                 cookieNoticeAlert.classList.remove('d-none');
             }
         
-            cookieNoticeAlert.querySelectorAll('button').forEach(function (el) {
-                el.addEventListener('click', function() {
+            cookieNoticeAlert.querySelectorAll('button').forEach(el => {
+                el.addEventListener('click', () => {
                     document.cookie = cookieNoticeName + '=true;' + setCookieExpirationNever() + 'path=/;';
                 }, false);
             });
