@@ -1,13 +1,15 @@
-(function() {
-    var confettiOndemand = document.querySelectorAll('.confetti');
+import { confettiBurst } from './functions.js';
 
-    confettiOndemand.forEach(function(el) {
-        el.addEventListener('click', function() {
+(() => {
+    const confettiOndemand = document.querySelectorAll('.confetti');
+
+    confettiOndemand.forEach(el => {
+        el.addEventListener('click', () => {
             confettiBurst();
         }, false);
 
-        document.addEventListener('keydown', function(e) {
-            var code = (e.keyCode ? e.keyCode : e.which);
+        document.addEventListener('keydown', e => {
+            const code = (e.keyCode ? e.keyCode : e.which);
 
             if (code == 13 && document.activeElement == el) {
                 confettiBurst();

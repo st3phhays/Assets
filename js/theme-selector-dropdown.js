@@ -1,13 +1,13 @@
-(function() {
-    var themeSelectorDropdown = document.getElementById('themeSelectorDropdown');
+(() => {
+    const themeSelectorDropdown = document.getElementById('themeSelectorDropdown');
 
     if (themeSelectorDropdown) {
-        var htmlRoot = document.querySelector('html'),
+        const htmlRoot = document.querySelector('html'),
             themeSelectors = document.querySelectorAll('.theme-selector');
 
-        themeSelectors.forEach(function (el) {
-            el.addEventListener('click', function() {
-                var selectedTheme = el.getAttribute('data-sh-theme'),
+        themeSelectors.forEach(el => {
+            el.addEventListener('click', () => {
+                const selectedTheme = el.getAttribute('data-sh-theme'),
                     selectedThemeMode = el.getAttribute('data-sh-theme-mode');
 
                 htmlRoot.setAttribute('data-sh-theme', selectedTheme);
@@ -17,8 +17,8 @@
             }, false);
         });
 
-        themeSelectorDropdown.addEventListener('show.bs.dropdown', function () {
-            themeSelectors.forEach(function (el) {
+        themeSelectorDropdown.addEventListener('show.bs.dropdown', () => {
+            themeSelectors.forEach(el => {
                 if (el.getAttribute('data-sh-theme') == htmlRoot.getAttribute('data-sh-theme')) {
                     el.classList.add('active');
                     el.setAttribute('aria-current', 'true');

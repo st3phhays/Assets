@@ -1,13 +1,13 @@
-(function() {
-    document.addEventListener("DOMContentLoaded", function() {
-        var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+(() => {
+    document.addEventListener("DOMContentLoaded", () => {
+        const lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
         
         if ("IntersectionObserver" in window) {
-            var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(video) {
+            const lazyVideoObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(video => {
                     if (video.isIntersecting) {
-                        for (var source in video.target.children) {
-                            var videoSource = video.target.children[source];
+                        for (let source in video.target.children) {
+                            let videoSource = video.target.children[source];
 
                             if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
                                 videoSource.src = videoSource.dataset.src;
@@ -21,7 +21,7 @@
                 });
             });
         
-            lazyVideos.forEach(function(lazyVideo) {
+            lazyVideos.forEach(lazyVideo => {
                 lazyVideoObserver.observe(lazyVideo);
             });
         }

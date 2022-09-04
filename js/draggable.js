@@ -1,28 +1,24 @@
-(function() {
-    var container = document.querySelector("#draggableContainer");
+import { randomNoRepeats } from './functions.js';
+
+(() => {
+    const container = document.querySelector("#draggableContainer");
 
     if (container) {
         const resizeObserver = new ResizeObserver(entries => resetTranslate());
-        var activeItem = null,
-            active = false,
-            draggableItems = container.querySelectorAll('.draggable'),
+
+        let activeItem = null,
+            active = false;
+
+        const draggableItems = container.querySelectorAll('.draggable'),
             shaker = randomNoRepeats([...draggableItems]);
             
         resizeObserver.observe(document.body);
 
-        const shakerInterval = setInterval(function() {
+        const shakerInterval = setInterval(() => {
             shaker();
         }, 5000);
 
-        container.addEventListener("touchstart", dragStart, false);
-        container.addEventListener("touchend", dragEnd, false);
-        container.addEventListener("touchmove", drag, false);
-
-        container.addEventListener("mousedown", dragStart, false);
-        container.addEventListener("mouseup", dragEnd, false);
-        container.addEventListener("mousemove", drag, false);
-
-        function dragStart(e) {
+        const dragStart = e => {
             if ((e.target !== e.currentTarget) && e.target.classList.contains('draggable')) {
                 clearInterval(shakerInterval);
 
@@ -52,7 +48,7 @@
             }
         }
 
-        function dragEnd(e) {
+        const dragEnd = e => {
             if (activeItem !== null) {
                 activeItem.initialX = activeItem.currentX;
                 activeItem.initialY = activeItem.currentY;
@@ -63,7 +59,7 @@
             activeItem = null;
         }
 
-        function drag(e) {
+        const drag = e => {
             if (active) {
                 if (e.type === "touchmove") {
                     e.preventDefault();
@@ -82,14 +78,22 @@
             }
         }
 
-        function setTranslate(xPos, yPos, el) {
+        const setTranslate = (xPos, yPos, el) => {
             el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
         }
 
-        function resetTranslate() {
-            for (var i of draggableItems) {
+        const resetTranslate = () => {
+            for (let i of draggableItems) {
                 setTranslate(0, 0, i);
             }
         }
+
+        container.addEventListener("touchstart", dragStart, false);
+        container.addEventListener("touchend", dragEnd, false);
+        container.addEventListener("touchmove", drag, false);
+
+        container.addEventListener("mousedown", dragStart, false);
+        container.addEventListener("mouseup", dragEnd, false);
+        container.addEventListener("mousemove", drag, false);
     }
 })();
