@@ -1,4 +1,4 @@
-import { confettiBurst } from './functions.js';
+import { confettiBurst } from './util/functions';
 
 (() => {
     const confettiOndemand = document.querySelectorAll('.confetti');

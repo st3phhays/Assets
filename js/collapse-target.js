@@ -1,4 +1,4 @@
-import Collapse from './bootstrap/collapse';
+import Collapse from 'bootstrap';
 
 (() => {
     const btnCollapseTarget = document.querySelectorAll('.btn-collapse-target');

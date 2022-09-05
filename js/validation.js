@@ -8,8 +8,8 @@
     Array.prototype.slice.call(forms).forEach(el => {
         el.addEventListener('submit', e => {
             if (!el.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
+                e.preventDefault()
+                e.stopPropagation()
             }
 
             el.classList.add('was-validated');

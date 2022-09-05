@@ -1,5 +1,5 @@
-import { confettiBurst} from './functions.js';
-import { consoleMeme } from './console-image.js';
+import { confettiBurst} from './util/functions';
+import { consoleMeme } from './util/console-image';
 
 (() => {
     const ticTacToe = document.getElementById('ticTacToe');

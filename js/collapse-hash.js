@@ -1,6 +1,5 @@
-import Collapse from './bootstrap/collapse';
-import { getParents } from './functions.js';
-import { escapeSpecialChars } from './functions.js';
+import Collapse from 'bootstrap';
+import { escapeSpecialChars, getParents } from './util/functions';
 
 (() => {
     if (location.hash) {

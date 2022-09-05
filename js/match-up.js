@@ -1,6 +1,5 @@
-import { confettiBurst } from './functions.js';
-import { randomNoRepeats} from './functions.js';
-import { consoleMeme } from './console-image.js';
+import { confettiBurst, randomNoRepeats } from './util/functions';
+import { consoleMeme } from './util/console-image';
 
 (() => {
     const matchUp = document.getElementById('matchUp');

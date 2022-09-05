@@ -1,3 +1,5 @@
+import { getCookie, setCookieExpirationNever } from './util/functions';
+
 (() => {
     const cookieNoticeAlert = document.getElementById('cookieNotice'),
         cookieNoticeName = 'accepted_cookie_notice';

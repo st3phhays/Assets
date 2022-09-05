@@ -1,4 +1,4 @@
-import { trimString } from './functions.js';
+import { trimString } from './util/functions';
 
 (() => {
     const codeBlocks = document.querySelectorAll('code'),

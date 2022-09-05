@@ -1,3 +1,4 @@
+import confetti from 'canvas-confetti';
 
 export const trimString = item => item.innerHTML = item.innerHTML.trim();
 
@@ -36,7 +37,6 @@ export const getParents = el => {
 }
 
 export const escapeSpecialChars = el => el.replace(/[.]/g, "\\$&");
-
 
 export const setCookieExpirationNever = () => {
     let d = new Date();

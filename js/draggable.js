@@ -1,4 +1,4 @@
-import { randomNoRepeats } from './functions.js';
+import { randomNoRepeats } from './util/functions';
 
 (() => {
     const container = document.querySelector("#draggableContainer");
