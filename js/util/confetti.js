@@ -2,7 +2,7 @@ import confetti from 'canvas-confetti';
 
 export const confettiBurst = () => {
     const count = 200;
-    
+
     const defaults = {
         origin: { y: 0.7 }
     };
@@ -11,15 +11,15 @@ export const confettiBurst = () => {
         confetti(Object.assign({}, defaults, opts, {
             particleCount: Math.floor(count * particleRatio)
         }));
-    }
+    };
 
     fire(0.25, {
         spread: 26,
-        startVelocity: 55,
+        startVelocity: 55
     });
 
     fire(0.2, {
-        spread: 60,
+        spread: 60
     });
 
     fire(0.35, {
@@ -37,6 +37,6 @@ export const confettiBurst = () => {
 
     fire(0.1, {
         spread: 120,
-        startVelocity: 45,
+        startVelocity: 45
     });
-}
+};

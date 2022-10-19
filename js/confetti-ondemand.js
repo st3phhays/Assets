@@ -1,9 +1,9 @@
 import { confettiBurst } from './util/confetti';
 
 (() => {
-    const confettiOndemand = document.querySelectorAll('.confetti');
+    const confettiOnDemand = document.querySelectorAll('.confetti');
 
-    confettiOndemand.forEach(el => {
+    confettiOnDemand.forEach(el => {
         el.addEventListener('click', () => {
             confettiBurst();
         }, false);

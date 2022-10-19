@@ -2,11 +2,11 @@
     const themeSelectorToggle = document.getElementById('themeSelectorToggle');
 
     if (themeSelectorToggle) {
-        const htmlRoot = document.querySelector('html'),
-            themeQuery = window.matchMedia('(prefers-color-scheme: dark)'),
-            themeStorage = localStorage.getItem('theme'),
-            themeDark = htmlRoot.getAttribute('data-sh-theme-dark'),
-            themeLight= htmlRoot.getAttribute('data-sh-theme-light');
+        const htmlRoot = document.querySelector('html');
+        const themeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const themeStorage = localStorage.getItem('theme');
+        const themeDark = htmlRoot.getAttribute('data-sh-theme-dark');
+        const themeLight = htmlRoot.getAttribute('data-sh-theme-light');
 
         const setSystemTheme = e => {
             const themeSystem = e.matches ? 'dark' : 'light';
@@ -14,7 +14,7 @@
             if (!themeStorage) {
                 setToggle(themeSystem);
             }
-        }
+        };
 
         const setTheme = () => {
             if (themeSelectorToggle.checked) {
@@ -28,7 +28,7 @@
                 localStorage.setItem('theme', themeLight);
                 localStorage.setItem('theme-mode', 'light');
             }
-        }
+        };
 
         const setToggle = themePrefers => {
             if (themePrefers == 'dark') {
@@ -36,7 +36,7 @@
             } else {
                 themeSelectorToggle.checked = false;
             }
-        }
+        };
 
         setToggle(htmlRoot.getAttribute('data-sh-theme-mode'));
         themeSelectorToggle.addEventListener('change', setTheme);

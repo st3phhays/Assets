@@ -2,13 +2,13 @@
     const themeSelectorDropdown = document.getElementById('themeSelectorDropdown');
 
     if (themeSelectorDropdown) {
-        const htmlRoot = document.querySelector('html'),
-            themeSelectors = document.querySelectorAll('.theme-selector');
+        const htmlRoot = document.querySelector('html');
+        const themeSelectors = document.querySelectorAll('.theme-selector');
 
         themeSelectors.forEach(el => {
             el.addEventListener('click', () => {
-                const selectedTheme = el.getAttribute('data-sh-theme'),
-                    selectedThemeMode = el.getAttribute('data-sh-theme-mode');
+                const selectedTheme = el.getAttribute('data-sh-theme');
+                const selectedThemeMode = el.getAttribute('data-sh-theme-mode');
 
                 htmlRoot.setAttribute('data-sh-theme', selectedTheme);
                 htmlRoot.setAttribute('data-sh-theme-mode', selectedThemeMode);

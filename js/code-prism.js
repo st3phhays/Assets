@@ -1,9 +1,9 @@
 import { trimString } from './util/functions';
 
 (() => {
-    const codeBlocks = document.querySelectorAll('code'),
-        codePre = document.querySelectorAll('pre');
-        
+    const codeBlocks = document.querySelectorAll('code');
+    const codePre = document.querySelectorAll('pre');
+
     codeBlocks.forEach(trimString);
 
     // Highlight code blocks

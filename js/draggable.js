@@ -1,17 +1,17 @@
 import { randomNoRepeats } from './util/functions';
 
 (() => {
-    const container = document.querySelector("#draggableContainer");
+    const container = document.querySelector('#draggableContainer');
 
     if (container) {
-        const resizeObserver = new ResizeObserver(entries => resetTranslate());
+        const resizeObserver = new ResizeObserver(() => resetTranslate());
 
-        let activeItem = null,
-            active = false;
+        let activeItem = null;
+        let active = false;
 
-        const draggableItems = container.querySelectorAll('.draggable'),
-            shaker = randomNoRepeats([...draggableItems]);
-            
+        const draggableItems = container.querySelectorAll('.draggable');
+        const shaker = randomNoRepeats([...draggableItems]);
+
         resizeObserver.observe(document.body);
 
         const shakerInterval = setInterval(() => {
@@ -37,7 +37,7 @@ import { randomNoRepeats } from './util/functions';
                         activeItem.yOffset = 0;
                     }
 
-                    if (e.type === "touchstart") {
+                    if (e.type === 'touchstart') {
                         activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
                         activeItem.initialY = e.touches[0].clientY - activeItem.yOffset;
                     } else {
@@ -46,9 +46,9 @@ import { randomNoRepeats } from './util/functions';
                     }
                 }
             }
-        }
+        };
 
-        const dragEnd = e => {
+        const dragEnd = () => {
             if (activeItem !== null) {
                 activeItem.initialX = activeItem.currentX;
                 activeItem.initialY = activeItem.currentY;
@@ -57,11 +57,11 @@ import { randomNoRepeats } from './util/functions';
 
             active = false;
             activeItem = null;
-        }
+        };
 
         const drag = e => {
             if (active) {
-                if (e.type === "touchmove") {
+                if (e.type === 'touchmove') {
                     e.preventDefault();
 
                     activeItem.currentX = e.touches[0].clientX - activeItem.initialX;
@@ -76,24 +76,24 @@ import { randomNoRepeats } from './util/functions';
 
                 setTranslate(activeItem.currentX, activeItem.currentY, activeItem);
             }
-        }
+        };
 
         const setTranslate = (xPos, yPos, el) => {
-            el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
-        }
+            el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+        };
 
         const resetTranslate = () => {
-            for (let i of draggableItems) {
+            for (const i of draggableItems) {
                 setTranslate(0, 0, i);
             }
-        }
+        };
 
-        container.addEventListener("touchstart", dragStart, false);
-        container.addEventListener("touchend", dragEnd, false);
-        container.addEventListener("touchmove", drag, false);
+        container.addEventListener('touchstart', dragStart, false);
+        container.addEventListener('touchend', dragEnd, false);
+        container.addEventListener('touchmove', drag, false);
 
-        container.addEventListener("mousedown", dragStart, false);
-        container.addEventListener("mouseup", dragEnd, false);
-        container.addEventListener("mousemove", drag, false);
+        container.addEventListener('mousedown', dragStart, false);
+        container.addEventListener('mouseup', dragEnd, false);
+        container.addEventListener('mousemove', drag, false);
     }
 })();

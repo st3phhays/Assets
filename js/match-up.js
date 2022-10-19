@@ -4,10 +4,10 @@ import { consoleMeme } from './util/console-image';
 
 (() => {
     const matchUp = document.getElementById('matchUp');
-    
+
     if (matchUp) {
-        const cards = matchUp.querySelectorAll('.flip-card'),
-            flipper = randomNoRepeats([...cards]);
+        const cards = matchUp.querySelectorAll('.flip-card');
+        const flipper = randomNoRepeats([...cards]);
 
         const flipperInterval = setInterval(() => {
             flipper();
@@ -34,7 +34,7 @@ import { consoleMeme } from './util/console-image';
                     console.log('Whahooo! You found the Matching Card game. Can you find all the matches? 🎉');
                     confettiBurst();
                     clearInterval(flipperInterval);
-                    for (i of cards) {
+                    for (const i of cards) {
                         i.classList.remove('random');
                     }
                 }
@@ -47,17 +47,17 @@ import { consoleMeme } from './util/console-image';
                         el.classList.remove('flip-card-one');
                     } else {
                         el.classList.add('flip-card-two');
-                    
-                        const cardOne = document.querySelector('.flip-card-one'),
-                            cardTwo = document.querySelector('.flip-card-two');
+
+                        const cardOne = document.querySelector('.flip-card-one');
+                        const cardTwo = document.querySelector('.flip-card-two');
 
                         if (cardOne.getAttribute('sh-data-match') == cardTwo.getAttribute('sh-data-match')) {
                             cardOne.classList.add('flip-card-match');
                             cardTwo.classList.add('flip-card-match');
-                            console.log("You found a match! 🏆");
+                            console.log('You found a match! 🏆');
                             confettiBurst();
                         } else {
-                            consoleMeme("Not a match", "Try again", "https://cataas.com/cat/cute?width=200?height=200?" + new Date().getTime(), 200, 200);
+                            consoleMeme('Not a match', 'Try again', `https://cataas.com/cat/cute?width=200?height=200?${new Date().getTime()}`, 200, 200);
                             setTimeout(() => {
                                 cardOne.classList.remove('active');
                                 cardTwo.classList.remove('active');
@@ -70,7 +70,7 @@ import { consoleMeme } from './util/console-image';
                 } else {
                     console.log('🤦‍♀️ Yooo that card has already been matched, bruh.');
                 }
-            }
+            };
         });
     }
 })();

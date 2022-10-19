@@ -3,11 +3,11 @@ import { escapeSpecialChars, getParents } from './util/functions';
 
 (() => {
     if (location.hash) {
-        let el = document.querySelector(escapeSpecialChars(location.hash));
+        const el = document.querySelector(escapeSpecialChars(location.hash));
 
         if (el) {
-            const elScroll = el,
-                collapseParents = getParents(el).filter(el => el != document && el.classList.contains('collapse'));
+            const elScroll = el;
+            const collapseParents = getParents(el).filter(el => el != document && el.classList.contains('collapse'));
 
             if (collapseParents.length == 0 && el.classList.contains('collapse')) {
                 collapseParents.push(el);
@@ -15,9 +15,9 @@ import { escapeSpecialChars, getParents } from './util/functions';
 
             collapseParents.reverse().forEach((el, idx, array) => {
                 el = document.getElementById(escapeSpecialChars(el.id));
-                
+
                 const collapseParentContainer = Collapse.getOrCreateInstance(el, { toggle: false });
-                
+
                 collapseParentContainer.show();
 
                 el.addEventListener('shown.bs.collapse', e => {
