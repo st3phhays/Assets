@@ -1,4 +1,5 @@
-import { confettiBurst, randomNoRepeats } from './util/functions';
+import { randomNoRepeats } from './util/functions';
+import { confettiBurst } from './util/confetti';
 import { consoleMeme } from './util/console-image';
 
 (() => {
